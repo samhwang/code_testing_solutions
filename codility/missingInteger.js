@@ -1,27 +1,36 @@
-function solution(A) {
-    let i = 0;
-    let noDupes = [];
-    let condition = true;
-    A = A.filter((num) => num > 0).sort((prev, next) => prev - next);
-    for (i = 0; i < A.length; i++) {
-        if (A[i] !== A[i+1]) {
-            noDupes.push(A[i]);
-        }    
-    }
-    A = noDupes;
-    
-    if (A.length === 0) {
+/**
+ * Return an array of unique, sorted and positive numbers
+ * @param {number[]} numArray
+ * @returns {number[]}
+ */
+function getPositiveNumbers(numArray) {
+    return [...new Set(numArray)]
+        .filter((num) => num > 0)
+        .sort((prev, next) => prev - next);
+}
+
+/**
+ * Find the missing positive integer in an array
+ * @param {number[]} numArray 
+ * @returns {number}
+ */
+function solution(numArray) {
+    const sorted = getPositiveNumbers(numArray);
+    const length = sorted.length;
+
+    // If the original array was only negative, return 1.
+    const noPositive = length === 0;
+    if (noPositive) {
         return 1;
     }
-    
-    if (A[A.length - 1] === A.length) {
-        return A.length + 1;
-    }
-    
-    i = 0;
+
+    // Determine if the number at index i - 1 matches the value of i itself. (Basically A[0] === 1)
+    // If it isn't, it's the missing value
+    let i = 0;
+    let condition = true;
     while (condition) {
         i++;
-        condition = A[i-1] === i;
+        condition = sorted[i - 1] === i;
     }
     return i;
 }
