@@ -1,6 +1,14 @@
+/**
+ * Solution for Sock merchant, find the number of matched pairs.
+ * @link https://www.hackerrank.com/challenges/sock-merchant/problem
+ * @param {number} n number of socks in the pile 
+ * @param {number[]} ar color of each sock 
+ * @returns {number}
+ */
 function sockMerchant(n, ar) {
-    var count = 0;
+    let count = 0;
     const duplicate = [];
+    
     ar.forEach((element) => {
         // Check if there is a duplicate
         const check = duplicate.indexOf(element);
@@ -22,5 +30,6 @@ function sockMerchant(n, ar) {
             return;
         }
     });
+    
     return count;
 }

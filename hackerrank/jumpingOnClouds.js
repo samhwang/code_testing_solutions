@@ -1,15 +1,30 @@
-// Complete the jumpingOnClouds function below.
-function jumpingOnClouds(c) {
+/**
+ * Output the min number of jumps needed to go from first to the last index.
+ * @link https://www.hackerrank.com/challenges/jumping-on-the-clouds
+ * @param {number[]} clouds 
+ * @returns {number}
+ */
+function jumpingOnClouds(clouds) {
     let jump = 0;
-    let i = 0;
-    const max_value = c.length - 1;
-    while (i < max_value) {
-        if ((i + 2) <= max_value && c[i + 2] === 0) {
-            i = i + 2;
-        } else if ((i + 1) <= max_value && c[i + 1] === 0) {
-            i = i + 1;
+    let currentIndex = 0;
+    const maxIndex = clouds.length - 1;
+
+    const isMaxIndex = (index) => index <= maxIndex;
+    const isSafe = (index) => clouds[index] === 0;
+
+    while (currentIndex < maxIndex) {
+        if (isMaxIndex(currentIndex + 2) && isSafe(currentIndex + 2)) {
+            currentIndex += 2;
+            jump++;
+            continue;
         }
-        jump++;
+
+        if (isMaxIndex(currentIndex + 1) && isSafe(currentIndex + 1)) {
+            currentIndex += 1;
+            jump++;
+            continue;
+        }
     }
+
     return jump;
 }
