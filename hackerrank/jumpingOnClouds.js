@@ -1,7 +1,7 @@
 /**
  * Output the min number of jumps needed to go from first to the last index.
  * @link https://www.hackerrank.com/challenges/jumping-on-the-clouds
- * @param {number[]} clouds 
+ * @param {number[]} clouds
  * @returns {number}
  */
 function jumpingOnClouds(clouds) {

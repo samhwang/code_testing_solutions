@@ -11,7 +11,7 @@ function getPositiveNumbers(numArray) {
 
 /**
  * Find the missing positive integer in an array
- * @param {number[]} numArray 
+ * @param {number[]} numArray
  * @returns {number}
  */
 function solution(numArray) {

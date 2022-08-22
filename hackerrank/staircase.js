@@ -1,6 +1,6 @@
 /**
  * Print out a staircase with a given amount of steps
- * @param {number} n 
+ * @param {number} n
  */
 function staircase(n) {
     for (let i = 1; i <= n; i++) {

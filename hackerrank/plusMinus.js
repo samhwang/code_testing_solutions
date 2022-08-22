@@ -1,6 +1,6 @@
 /**
  * Print out the ratios of elements > 0, < 0 and == 0
- * @param {number[]} arr 
+ * @param {number[]} arr
  */
 function plusMinus(arr) {
     function getFloatRatio(num) {
@@ -20,7 +20,7 @@ function plusMinus(arr) {
             return accumulator;
         },
         { negatives: 0, positives: 0, zeroes: 0 }
-    )
+    );
 
     const posRatio = getFloatRatio(positives);
     console.log(posRatio);

@@ -5,10 +5,12 @@
 function miniMaxSum(arr) {
     const sortedArray = arr.sort();
     function getSumOfElements(start, end = undefined) {
-        return sortedArray.slice(start, end).reduce((total, num) => total + num, 0);
+        return sortedArray
+            .slice(start, end)
+            .reduce((total, num) => total + num, 0);
     }
     const minSum = getSumOfElements(0, 4);
-    
+
     const maxSum = getSumOfElements(1);
     console.log(`${minSum} ${maxSum}`);
 }
