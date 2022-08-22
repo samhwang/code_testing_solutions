@@ -1,0 +1,14 @@
+{
+    "name": "@samhwang/code_testing_solutions",
+    "version": "0.0.0",
+    "author": "samhwang",
+    "scripts": {
+        "format": "prettier -w --cache ."
+    },
+    "devDependencies": {
+        "esbuild": "^0.15.5",
+        "prettier": "^2.7.1",
+        "tsx": "^3.8.2",
+        "typescript": "^4.7.4"
+    }
+}
